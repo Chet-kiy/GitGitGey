@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,13 @@ namespace GitHub
 
             this.surnameField.Text = "surname";
             this.surnameField.ForeColor = Color.Gray;
+        }
+        private string HashPass(string text)
+        {
+            text += "ecoding";
+            byte[] data = Encoding.Default.GetBytes(text);
+            var result = new SHA256Managed().ComputeHash(data);
+            return BitConverter.ToString(result).Replace("-", "").ToLower();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -161,7 +169,7 @@ namespace GitHub
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
             string login = loginField.Text;
-            string pass = passField.Text;
+            string pass = HashPass(passField.Text);
             string name = nameField.Text;
             string surname = surnameField.Text;
 
@@ -231,10 +239,10 @@ namespace GitHub
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        {           
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            this.Close();
         }
     }
 }

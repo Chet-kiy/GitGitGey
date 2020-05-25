@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,14 @@ namespace GitHub
             this.passField.UseSystemPasswordChar = false;
             this.passField.ForeColor = Color.Gray;
         }
+        private string HashPass(string text)
+        {
+            text += "ecoding";
+            byte[] data = Encoding.Default.GetBytes(text);
+            var result = new SHA256Managed().ComputeHash(data);
+            return BitConverter.ToString(result).Replace("-", "").ToLower();
+        }
+
         public string UserID;
         private void passField_Enter(object sender, EventArgs e)
         {
@@ -123,7 +132,7 @@ namespace GitHub
         public void ButtonLogin_Click(object sender, EventArgs e)
         {
             string loginUser = loginField.Text;
-            string passUser = passField.Text;
+            string passUser = HashPass(passField.Text);
 
             DB db = new DB();
 
@@ -147,10 +156,10 @@ namespace GitHub
                     
                 }
                 MessageBox.Show("Вы успешно авторизировались", "message");
-                this.Hide();
                 MainForm mainform = new MainForm();
                 mainform.IdUser = UserID;
                 mainform.Show();
+                this.Hide();
             }  
             else
                 MessageBox.Show("Неверные имя пользователя или пароль","message");
@@ -158,14 +167,9 @@ namespace GitHub
 
         private void registerLabel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisterForm registerForm = new RegisterForm();
+            RegisterForm registerForm = new RegisterForm();          
             registerForm.Show();
-        }
-        public void GetUserID(string loginuser, string passuser) 
-        {
-
-        }
-        
+            this.Hide();
+        }     
     }
 }

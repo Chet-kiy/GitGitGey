@@ -86,5 +86,33 @@ namespace GitHub
         {
             LoadDataUsersInfo(IdUser);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {           
+            LoginForm loginform = new LoginForm();           
+            loginform.Show();
+            this.Close();
+
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            Image uP = Image.FromFile("up1.png");
+            if (panel3.Enabled == false)
+            {
+                panel3.Enabled = true;
+                panel3.Visible = true;
+
+                ViewButton.Image = Image.FromFile("up1.png");
+            }
+            else
+            {
+                panel3.Enabled = false;
+                panel3.Visible = false;
+
+                ViewButton.Image = Image.FromFile("down1.png");
+            }
+        }
     }
+
 }
