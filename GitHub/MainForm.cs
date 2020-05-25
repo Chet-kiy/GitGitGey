@@ -112,25 +112,6 @@ namespace GitHub
 
         }
 
-        private void ViewButton_Click(object sender, EventArgs e)
-        {
-            Image uP = Image.FromFile("up1.png");
-            if (panel3.Enabled == false)
-            {
-                panel3.Enabled = true;
-                panel3.Visible = true;
-
-                ViewButton.Image = Image.FromFile("up1.png");
-            }
-            else
-            {
-                panel3.Enabled = false;
-                panel3.Visible = false;
-
-                ViewButton.Image = Image.FromFile("down1.png");
-            }
-        }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             string name = nameField.Text;
@@ -218,6 +199,32 @@ namespace GitHub
             {
                 this.descriptionField.Text = "description";
                 this.descriptionField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void downButton_Click(object sender, EventArgs e)
+        {
+            if (panel3.Enabled == false)
+            {
+                panel3.Enabled = true;
+                panel3.Visible = true;
+                downButton.Visible = false;
+                downButton.Enabled = false;
+                upButton.Visible = true;
+                upButton.Enabled = true;
+            }
+        }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            if (panel3.Enabled == true)
+            {
+                panel3.Enabled = false; ;
+                panel3.Visible = false; ;
+                downButton.Visible = true;
+                downButton.Enabled = true;
+                upButton.Visible = false;
+                upButton.Enabled = false;
             }
         }
     }
