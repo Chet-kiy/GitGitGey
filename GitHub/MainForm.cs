@@ -22,6 +22,15 @@ namespace GitHub
 
             this.nameField.Size = new Size(nameField.Size.Width, 48);
             this.passField.Size = new Size(passField.Size.Width, 48);
+
+            this.nameField.Text = "name";
+            this.nameField.ForeColor = Color.Gray;
+
+            this.passField.Text = "pass";
+            this.passField.ForeColor = Color.Gray;
+
+            this.descriptionField.Text = "description";
+            this.descriptionField.ForeColor = Color.Gray;
         }
         public string IdUser;
         private void LoadDataUsersInfo(string IdUser)
@@ -156,6 +165,60 @@ namespace GitHub
                 MessageBox.Show("Ошибка", "message");
 
             db.closeConnection();
+        }
+
+        private void nameField_Enter(object sender, EventArgs e)
+        {
+            if (this.nameField.Text == "name")
+            {
+                this.nameField.Text = "";
+                this.nameField.ForeColor = Color.Black;
+            }
+        }
+
+        private void nameField_Leave(object sender, EventArgs e)
+        {
+            if (this.nameField.Text == "")
+            {
+                this.nameField.Text = "name";
+                this.nameField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void passField_Enter(object sender, EventArgs e)
+        {
+            if (this.passField.Text == "pass")
+            {
+                this.passField.Text = "";
+                this.passField.ForeColor = Color.Black;
+            }
+        }
+
+        private void passField_Leave(object sender, EventArgs e)
+        {
+            if (this.passField.Text == "")
+            {
+                this.passField.Text = "pass";
+                this.passField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void descriptionField_Enter(object sender, EventArgs e)
+        {
+            if (this.descriptionField.Text == "description")
+            {
+                this.descriptionField.Text = "";
+                this.descriptionField.ForeColor = Color.Black;
+            }
+        }
+
+        private void descriptionField_Leave(object sender, EventArgs e)
+        {
+            if (this.descriptionField.Text == "")
+            {
+                this.descriptionField.Text = "description";
+                this.descriptionField.ForeColor = Color.Gray;
+            }
         }
     }
 

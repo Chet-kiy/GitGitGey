@@ -102,7 +102,7 @@
             this.LoadDataButton.Name = "LoadDataButton";
             this.LoadDataButton.Size = new System.Drawing.Size(162, 45);
             this.LoadDataButton.TabIndex = 6;
-            this.LoadDataButton.Text = "Загрузить";
+            this.LoadDataButton.Text = "Обновить";
             this.LoadDataButton.UseVisualStyleBackColor = false;
             this.LoadDataButton.Click += new System.EventHandler(this.LoadDataButton_Click);
             // 
@@ -198,6 +198,8 @@
             this.descriptionField.Size = new System.Drawing.Size(351, 96);
             this.descriptionField.TabIndex = 0;
             this.descriptionField.Text = "";
+            this.descriptionField.Enter += new System.EventHandler(this.descriptionField_Enter);
+            this.descriptionField.Leave += new System.EventHandler(this.descriptionField_Leave);
             // 
             // passField
             // 
@@ -207,6 +209,8 @@
             this.passField.Name = "passField";
             this.passField.Size = new System.Drawing.Size(351, 45);
             this.passField.TabIndex = 2;
+            this.passField.Enter += new System.EventHandler(this.passField_Enter);
+            this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
             // nameField
             // 
@@ -216,6 +220,8 @@
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(351, 45);
             this.nameField.TabIndex = 3;
+            this.nameField.Enter += new System.EventHandler(this.nameField_Enter);
+            this.nameField.Leave += new System.EventHandler(this.nameField_Leave);
             // 
             // ViewButton
             // 
