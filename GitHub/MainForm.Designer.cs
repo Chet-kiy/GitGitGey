@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.LoadDataButton = new System.Windows.Forms.Button();
             this.DataInfoUsers = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,17 +39,23 @@
             this.closeButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.loginField = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descriptionField = new System.Windows.Forms.RichTextBox();
+            this.passField = new System.Windows.Forms.TextBox();
+            this.nameField = new System.Windows.Forms.TextBox();
             this.ViewButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataInfoUsers)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,20 +74,21 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // button1
+            // AddButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(80, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 45);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AddButton.Location = new System.Drawing.Point(141, 277);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(162, 45);
+            this.AddButton.TabIndex = 7;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // LoadDataButton
             // 
@@ -169,10 +176,13 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.loginField);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.richTextBox1);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.nameField);
+            this.panel3.Controls.Add(this.passField);
+            this.panel3.Controls.Add(this.AddButton);
+            this.panel3.Controls.Add(this.descriptionField);
             this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(374, 195);
             this.panel3.Name = "panel3";
@@ -180,31 +190,32 @@
             this.panel3.TabIndex = 8;
             this.panel3.Visible = false;
             // 
-            // richTextBox1
+            // descriptionField
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(55, 157);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(351, 96);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.descriptionField.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.descriptionField.Location = new System.Drawing.Point(70, 165);
+            this.descriptionField.Name = "descriptionField";
+            this.descriptionField.Size = new System.Drawing.Size(351, 96);
+            this.descriptionField.TabIndex = 0;
+            this.descriptionField.Text = "";
             // 
-            // loginField
+            // passField
             // 
-            this.loginField.CausesValidation = false;
-            this.loginField.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginField.Location = new System.Drawing.Point(55, 106);
-            this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(351, 45);
-            this.loginField.TabIndex = 2;
+            this.passField.CausesValidation = false;
+            this.passField.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passField.Location = new System.Drawing.Point(70, 101);
+            this.passField.Name = "passField";
+            this.passField.Size = new System.Drawing.Size(351, 45);
+            this.passField.TabIndex = 2;
             // 
-            // textBox1
+            // nameField
             // 
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(55, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 45);
-            this.textBox1.TabIndex = 3;
+            this.nameField.CausesValidation = false;
+            this.nameField.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameField.Location = new System.Drawing.Point(70, 38);
+            this.nameField.Name = "nameField";
+            this.nameField.Size = new System.Drawing.Size(351, 45);
+            this.nameField.TabIndex = 3;
             // 
             // ViewButton
             // 
@@ -230,6 +241,37 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GitHub.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GitHub.Properties.Resources._lock;
+            this.pictureBox3.Location = new System.Drawing.Point(16, 98);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox4.Image = global::GitHub.Properties.Resources.contact;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 165);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(62, 73);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +289,9 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,12 +307,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button LoadDataButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox loginField;
+        private System.Windows.Forms.RichTextBox descriptionField;
+        private System.Windows.Forms.TextBox nameField;
+        private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.PictureBox ViewButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

@@ -16,6 +16,12 @@ namespace GitHub
         public MainForm()
         {
             InitializeComponent();
+
+            this.passField.AutoSize = false;
+            this.nameField.AutoSize = false;
+
+            this.nameField.Size = new Size(nameField.Size.Width, 48);
+            this.passField.Size = new Size(passField.Size.Width, 48);
         }
         public string IdUser;
         private void LoadDataUsersInfo(string IdUser)
@@ -31,6 +37,8 @@ namespace GitHub
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
+
+            DataInfoUsers.Rows.Clear();
 
             foreach (DataRow dr in table.Rows)
             {
@@ -112,6 +120,42 @@ namespace GitHub
 
                 ViewButton.Image = Image.FromFile("down1.png");
             }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            string name = nameField.Text;
+            string pass = passField.Text;
+            string description = descriptionField.Text;
+
+            if (name == "")
+            {
+                MessageBox.Show("Введите название", "message");
+                return;
+            }
+            if (pass == "")
+            {
+                MessageBox.Show("Введите пароль", "message");
+                return;
+            }
+
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("INSERT INTO `infousers` (`name`, `password`, `Description`, `idUser`) VALUES(@name, @pass, @desc, @id)", db.getConnection());
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
+            command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = description;
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = IdUser;
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Данные обновлены", "message");
+            else
+                MessageBox.Show("Ошибка", "message");
+
+            db.closeConnection();
         }
     }
 
