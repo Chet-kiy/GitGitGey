@@ -28,6 +28,7 @@ namespace GitHub
             this.passField.UseSystemPasswordChar = false;
             this.passField.ForeColor = Color.Gray;
         }
+        public string UserID;
         private void passField_Enter(object sender, EventArgs e)
         {
             if (this.passField.Text == "Введите пароль")
@@ -119,7 +120,7 @@ namespace GitHub
             lastpoint = new Point(e.X, e.Y);
         }
 
-        private void ButtonLogin_Click(object sender, EventArgs e)
+        public void ButtonLogin_Click(object sender, EventArgs e)
         {
             string loginUser = loginField.Text;
             string passUser = passField.Text;
@@ -135,13 +136,24 @@ namespace GitHub
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
             adapter.SelectCommand = command;
-            adapter.Fill(table);
+            adapter.Fill(table);  
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("YES", "message");
+            {
+                foreach (DataRow dr in table.Rows)
+                {
+                    object ID = dr.ItemArray[0];
+                    UserID = Convert.ToString(ID);
+                    
+                }
+                MessageBox.Show("Вы успешно авторизировались", "message");
+                this.Hide();
+                MainForm mainform = new MainForm();
+                mainform.IdUser = UserID;
+                mainform.Show();
+            }  
             else
-                MessageBox.Show("NO","message");
-
+                MessageBox.Show("Неверные имя пользователя или пароль","message");
         }
 
         private void registerLabel_Click(object sender, EventArgs e)
@@ -150,5 +162,10 @@ namespace GitHub
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
         }
+        public void GetUserID(string loginuser, string passuser) 
+        {
+
+        }
+        
     }
 }
