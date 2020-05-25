@@ -170,7 +170,6 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox3.Image = global::GitHub.Properties.Resources.contact;
             this.pictureBox3.Location = new System.Drawing.Point(304, 133);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(62, 73);
@@ -180,7 +179,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GitHub.Properties.Resources._lock;
             this.pictureBox2.Location = new System.Drawing.Point(14, 186);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
@@ -190,7 +188,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GitHub.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(14, 110);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
@@ -201,7 +198,6 @@
             // pictureBox4
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::GitHub.Properties.Resources.back2;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(41, 35);

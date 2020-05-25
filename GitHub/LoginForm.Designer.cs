@@ -95,7 +95,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GitHub.Properties.Resources._lock;
             this.pictureBox2.Location = new System.Drawing.Point(12, 179);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
@@ -115,7 +114,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GitHub.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(12, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
