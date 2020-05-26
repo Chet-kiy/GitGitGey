@@ -130,12 +130,12 @@ namespace GitHub
             string pass = passField.Text;
             string description = descriptionField.Text;
 
-            if (name == "")
+            if (name == "" || name == "name")
             {
                 MessageBox.Show("Введите название", "message");
                 return;
             }
-            if (pass == "")
+            if (pass == "" || pass == "pass")
             {
                 MessageBox.Show("Введите пароль", "message");
                 return;
@@ -157,7 +157,17 @@ namespace GitHub
             db.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
+            {
                 MessageBox.Show("Данные обновлены", "message");
+                nameField.Text = "name";
+                nameField.ForeColor = Color.Gray;
+                passField.Text = "pass";
+                passField.ForeColor = Color.Gray;
+                descriptionField.Text = "description";
+                descriptionField.ForeColor = Color.Gray;
+
+
+            }
             else
                 MessageBox.Show("Ошибка", "message");
 
