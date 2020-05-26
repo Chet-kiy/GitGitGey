@@ -138,9 +138,9 @@
     <Content Include="images\back.png" />
     <Content Include="images\back2.png" />
     <Content Include="images\contact.png" />
-    <Content Include="images\data.png" />
     <Content Include="images\door.png" />
     <Content Include="images\down.png" />
+    <Content Include="images\icon.ico" />
     <Content Include="images\lock.png" />
     <Content Include="images\up.png" />
     <Content Include="images\user.png" />
