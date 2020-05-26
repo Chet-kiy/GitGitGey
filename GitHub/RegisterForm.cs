@@ -173,22 +173,22 @@ namespace GitHub
             string name = nameField.Text;
             string surname = surnameField.Text;
 
-            if (loginField.Text == "login")
+            if (loginField.Text == "login" || loginField.Text == "")
             {
                 MessageBox.Show("Введите логин", "message");
                 return;
             }
-            if (passField.Text == "password")
+            if (passField.Text == "password" || passField.Text == "")
             {
                 MessageBox.Show("Введите пароль", "message");
                 return;
             }
-            if (nameField.Text == "name")
+            if (nameField.Text == "name" || nameField.Text == "")
             {
                 MessageBox.Show("Введите имя","message");
                 return;
             }
-            if (surnameField.Text == "surname")
+            if (surnameField.Text == "surname" || surnameField.Text == "")
             {
                 MessageBox.Show("Введите фамилию", "message");
                 return;
@@ -209,7 +209,12 @@ namespace GitHub
             db.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
+            {
                 MessageBox.Show("Вы создали аккаунт", "message");
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+                this.Close();
+            }
             else
                 MessageBox.Show("Не удалось создать аккаунт","message");
 
@@ -217,6 +222,17 @@ namespace GitHub
         }
         public Boolean checkLogin()
         {
+            string login = loginField.Text;
+
+            foreach (char g in login)
+            {
+                if (!(char.IsLetterOrDigit(g)))
+                {
+                    MessageBox.Show("Вы ввели запрещенный символ", "message");
+                    return true;
+                }
+            }
+
             DB db = new DB();
 
             DataTable table = new DataTable();
@@ -224,10 +240,12 @@ namespace GitHub
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = login;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
+
+            
 
             if (table.Rows.Count > 0)
             {
@@ -239,7 +257,7 @@ namespace GitHub
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
-        {           
+        {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();

@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.downButton = new System.Windows.Forms.PictureBox();
+            this.upButton = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nameField = new System.Windows.Forms.TextBox();
             this.passField = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -40,23 +45,18 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.downButton = new System.Windows.Forms.PictureBox();
-            this.upButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataInfoUsers)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.downButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upButton)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataInfoUsers)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,32 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // downButton
+            // 
+            this.downButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.downButton.Image = global::GitHub.Properties.Resources.down;
+            this.downButton.Location = new System.Drawing.Point(574, 178);
+            this.downButton.Name = "downButton";
+            this.downButton.Size = new System.Drawing.Size(48, 48);
+            this.downButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.downButton.TabIndex = 10;
+            this.downButton.TabStop = false;
+            this.downButton.Click += new System.EventHandler(this.downButton_Click);
+            // 
+            // upButton
+            // 
+            this.upButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upButton.Enabled = false;
+            this.upButton.Image = global::GitHub.Properties.Resources.up;
+            this.upButton.Location = new System.Drawing.Point(574, 178);
+            this.upButton.Name = "upButton";
+            this.upButton.Size = new System.Drawing.Size(48, 48);
+            this.upButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.upButton.TabIndex = 9;
+            this.upButton.TabStop = false;
+            this.upButton.Visible = false;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox4);
@@ -92,6 +118,37 @@
             this.panel3.Size = new System.Drawing.Size(442, 332);
             this.panel3.TabIndex = 8;
             this.panel3.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox4.Image = global::GitHub.Properties.Resources.contact;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 142);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(62, 73);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GitHub.Properties.Resources._lock;
+            this.pictureBox3.Location = new System.Drawing.Point(17, 82);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GitHub.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // nameField
             // 
@@ -160,30 +217,38 @@
             // 
             // DataInfoUsers
             // 
+            this.DataInfoUsers.AllowUserToAddRows = false;
+            this.DataInfoUsers.AllowUserToDeleteRows = false;
             this.DataInfoUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataInfoUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
             this.DataInfoUsers.Location = new System.Drawing.Point(12, 82);
+            this.DataInfoUsers.MultiSelect = false;
             this.DataInfoUsers.Name = "DataInfoUsers";
+            this.DataInfoUsers.ReadOnly = true;
             this.DataInfoUsers.Size = new System.Drawing.Size(346, 482);
             this.DataInfoUsers.TabIndex = 1;
+            this.DataInfoUsers.TabStop = false;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Name";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Pass";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Description";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // panel2
             // 
@@ -198,6 +263,18 @@
             this.panel2.TabIndex = 0;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::GitHub.Properties.Resources.door;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // closeButton
             // 
@@ -226,75 +303,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Таблица";
             // 
-            // downButton
-            // 
-            this.downButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.downButton.Image = global::GitHub.Properties.Resources.down;
-            this.downButton.Location = new System.Drawing.Point(574, 178);
-            this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(48, 48);
-            this.downButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.downButton.TabIndex = 10;
-            this.downButton.TabStop = false;
-            this.downButton.Click += new System.EventHandler(this.downButton_Click);
-            // 
-            // upButton
-            // 
-            this.upButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upButton.Enabled = false;
-            this.upButton.Image = global::GitHub.Properties.Resources.up;
-            this.upButton.Location = new System.Drawing.Point(574, 178);
-            this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(48, 48);
-            this.upButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.upButton.TabIndex = 9;
-            this.upButton.TabStop = false;
-            this.upButton.Visible = false;
-            this.upButton.Click += new System.EventHandler(this.upButton_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox4.Image = global::GitHub.Properties.Resources.contact;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 142);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(62, 73);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GitHub.Properties.Resources._lock;
-            this.pictureBox3.Location = new System.Drawing.Point(17, 82);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GitHub.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::GitHub.Properties.Resources.door;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,16 +313,16 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataInfoUsers)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.downButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upButton)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataInfoUsers)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

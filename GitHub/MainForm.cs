@@ -13,6 +13,7 @@ namespace GitHub
 {
     public partial class MainForm : Form
     {
+        
         public MainForm()
         {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace GitHub
 
             this.descriptionField.Text = "description";
             this.descriptionField.ForeColor = Color.Gray;
+
+            
         }
         public string IdUser;
         private void LoadDataUsersInfo(string IdUser)
@@ -51,7 +54,16 @@ namespace GitHub
 
             foreach (DataRow dr in table.Rows)
             {
-                DataInfoUsers.Rows.Add(dr.ItemArray[1],dr.ItemArray[2],dr.ItemArray[3]);               
+                object crypt_name = dr.ItemArray[1];
+                object crypt_pass = dr.ItemArray[2];
+                object crypt_description = dr.ItemArray[3];
+
+                string name = db.decrypt((string) crypt_name);
+                string pass = db.decrypt((string) crypt_pass);
+                string description = db.decrypt((string) crypt_description);
+                
+
+                DataInfoUsers.Rows.Add(name, pass, description);               
             }
         }
 
@@ -128,14 +140,18 @@ namespace GitHub
                 MessageBox.Show("Введите пароль", "message");
                 return;
             }
-
+            
 
             DB db = new DB();
+            string crypt_name = db.encrypt(name);
+            string crypt_pass = db.encrypt(pass);
+            string crypt_description = db.encrypt(description);
+            
 
             MySqlCommand command = new MySqlCommand("INSERT INTO `infousers` (`name`, `password`, `Description`, `idUser`) VALUES(@name, @pass, @desc, @id)", db.getConnection());
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
-            command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = description;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = crypt_name;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = crypt_pass;
+            command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = crypt_description;
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = IdUser;
 
             db.openConnection();
