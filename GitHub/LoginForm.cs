@@ -22,10 +22,10 @@ namespace GitHub
             this.loginField.Size = new Size(loginField.Size.Width, 48);
             this.passField.Size = new Size(passField.Size.Width, 48);
 
-            this.loginField.Text = "Введите логин";
+            this.loginField.Text = "username";
             this.loginField.ForeColor = Color.Gray;
 
-            this.passField.Text = "Введите пароль";
+            this.passField.Text = "password";
             this.passField.UseSystemPasswordChar = false;
             this.passField.ForeColor = Color.Gray;
         }
@@ -40,7 +40,7 @@ namespace GitHub
         public string UserID;
         private void passField_Enter(object sender, EventArgs e)
         {
-            if (this.passField.Text == "Введите пароль")
+            if (this.passField.Text == "password")
             {
                 this.passField.Text = "";
                 this.passField.UseSystemPasswordChar = true;
@@ -51,7 +51,7 @@ namespace GitHub
         {
             if (this.passField.Text == "")
             {
-                this.passField.Text = "Введите пароль";
+                this.passField.Text = "password";
                 this.passField.UseSystemPasswordChar = false;
                 this.passField.ForeColor = Color.Gray;
             }
@@ -59,7 +59,7 @@ namespace GitHub
 
         private void loginField_Enter(object sender, EventArgs e)
         {
-            if (this.loginField.Text == "Введите логин")
+            if (this.loginField.Text == "username")
             {
                 this.loginField.Text = "";
                 this.loginField.ForeColor = Color.Black;
@@ -69,7 +69,7 @@ namespace GitHub
         {
             if (this.loginField.Text == "")
             {
-                this.loginField.Text = "Введите логин";
+                this.loginField.Text = "username";
                 this.loginField.ForeColor = Color.Gray;
             }           
         }

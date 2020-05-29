@@ -63,7 +63,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(13)))), ((int)(((byte)(44)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.downButton);
             this.panel1.Controls.Add(this.upButton);
             this.panel1.Controls.Add(this.panel3);
@@ -175,17 +175,17 @@
             // 
             // AddButton
             // 
-            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
             this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(141, 277);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(162, 45);
             this.AddButton.TabIndex = 7;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Add ";
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -202,17 +202,17 @@
             // 
             // LoadDataButton
             // 
-            this.LoadDataButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.LoadDataButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
             this.LoadDataButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoadDataButton.FlatAppearance.BorderSize = 0;
             this.LoadDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadDataButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadDataButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LoadDataButton.ForeColor = System.Drawing.Color.White;
             this.LoadDataButton.Location = new System.Drawing.Point(374, 82);
             this.LoadDataButton.Name = "LoadDataButton";
             this.LoadDataButton.Size = new System.Drawing.Size(162, 45);
             this.LoadDataButton.TabIndex = 6;
-            this.LoadDataButton.Text = "Обновить";
+            this.LoadDataButton.Text = "Refresh";
             this.LoadDataButton.UseVisualStyleBackColor = false;
             this.LoadDataButton.Click += new System.EventHandler(this.LoadDataButton_Click);
             // 
@@ -220,6 +220,8 @@
             // 
             this.DataInfoUsers.AllowUserToAddRows = false;
             this.DataInfoUsers.AllowUserToDeleteRows = false;
+            this.DataInfoUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataInfoUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.DataInfoUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataInfoUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -253,10 +255,10 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(13)))), ((int)(((byte)(105)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.closeButton);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -282,7 +284,7 @@
             this.closeButton.AutoSize = true;
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeButton.ForeColor = System.Drawing.Color.Silver;
+            this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Location = new System.Drawing.Point(804, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(20, 19);
@@ -296,13 +298,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(322, 9);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(48, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 61);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Таблица";
+            this.label1.Size = new System.Drawing.Size(182, 38);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "My DataBase";
             // 
             // MainForm
             // 
@@ -335,7 +337,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label closeButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DataInfoUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -352,5 +353,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox upButton;
         private System.Windows.Forms.PictureBox downButton;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(13)))), ((int)(((byte)(44)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.surnameField);
             this.panel1.Controls.Add(this.nameField);
@@ -103,17 +103,17 @@
             // 
             // ButtonRegister
             // 
-            this.ButtonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.ButtonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
             this.ButtonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonRegister.FlatAppearance.BorderSize = 0;
             this.ButtonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRegister.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonRegister.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ButtonRegister.Location = new System.Drawing.Point(187, 262);
+            this.ButtonRegister.ForeColor = System.Drawing.Color.White;
+            this.ButtonRegister.Location = new System.Drawing.Point(107, 266);
             this.ButtonRegister.Name = "ButtonRegister";
-            this.ButtonRegister.Size = new System.Drawing.Size(237, 45);
+            this.ButtonRegister.Size = new System.Drawing.Size(397, 45);
             this.ButtonRegister.TabIndex = 5;
-            this.ButtonRegister.Text = "Зарегистрироваться";
+            this.ButtonRegister.Text = "Sign up for DataBase";
             this.ButtonRegister.UseVisualStyleBackColor = false;
             this.ButtonRegister.Click += new System.EventHandler(this.ButtonRegister_Click);
             // 
@@ -160,10 +160,10 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(13)))), ((int)(((byte)(105)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.closeButton);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -189,7 +189,7 @@
             this.closeButton.AutoSize = true;
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeButton.ForeColor = System.Drawing.Color.Silver;
+            this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Location = new System.Drawing.Point(594, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(20, 19);
@@ -203,13 +203,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(176, 9);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(61, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 61);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Регистрация";
+            this.label1.Size = new System.Drawing.Size(183, 38);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "New Account";
             // 
             // RegisterForm
             // 
@@ -244,10 +244,10 @@
         private System.Windows.Forms.TextBox loginField;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label closeButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox surnameField;
         private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
     }
 }
