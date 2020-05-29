@@ -171,6 +171,16 @@ namespace GitHub
             RegisterForm registerForm = new RegisterForm();          
             registerForm.Show();
             this.Hide();
-        }     
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/kapelka_d");
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://steamcommunity.com/profiles/76561198230851312/");
+        }
     }
 }

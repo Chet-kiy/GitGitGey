@@ -142,8 +142,10 @@
     <Content Include="images\down.png" />
     <Content Include="images\icon.ico" />
     <Content Include="images\lock.png" />
+    <None Include="images\steam.png" />
     <Content Include="images\up.png" />
     <Content Include="images\user.png" />
+    <None Include="images\vk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
