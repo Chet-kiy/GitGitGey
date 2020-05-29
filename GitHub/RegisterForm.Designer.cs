@@ -190,7 +190,7 @@
             this.pictureBox4.Image = global::GitHub.Properties.Resources.door;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(41, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
