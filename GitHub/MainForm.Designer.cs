@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.downButton = new System.Windows.Forms.PictureBox();
@@ -42,13 +43,15 @@
             this.descriptionField = new System.Windows.Forms.RichTextBox();
             this.LoadDataButton = new System.Windows.Forms.Button();
             this.DataInfoUsers = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.downButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upButton)).BeginInit();
@@ -71,9 +74,10 @@
             this.panel1.Controls.Add(this.DataInfoUsers);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(828, 576);
+            this.panel1.Size = new System.Drawing.Size(1089, 576);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -82,7 +86,7 @@
             // 
             this.downButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.downButton.Image = global::GitHub.Properties.Resources.down;
-            this.downButton.Location = new System.Drawing.Point(574, 178);
+            this.downButton.Location = new System.Drawing.Point(834, 178);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(48, 48);
             this.downButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +99,7 @@
             this.upButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.upButton.Enabled = false;
             this.upButton.Image = global::GitHub.Properties.Resources.up;
-            this.upButton.Location = new System.Drawing.Point(574, 178);
+            this.upButton.Location = new System.Drawing.Point(834, 178);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(48, 48);
             this.upButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +118,7 @@
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.descriptionField);
             this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(374, 232);
+            this.panel3.Location = new System.Drawing.Point(635, 232);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(442, 332);
             this.panel3.TabIndex = 8;
@@ -208,7 +212,7 @@
             this.LoadDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadDataButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadDataButton.ForeColor = System.Drawing.Color.White;
-            this.LoadDataButton.Location = new System.Drawing.Point(374, 82);
+            this.LoadDataButton.Location = new System.Drawing.Point(635, 82);
             this.LoadDataButton.Name = "LoadDataButton";
             this.LoadDataButton.Size = new System.Drawing.Size(162, 45);
             this.LoadDataButton.TabIndex = 6;
@@ -218,40 +222,27 @@
             // 
             // DataInfoUsers
             // 
-            this.DataInfoUsers.AllowUserToAddRows = false;
             this.DataInfoUsers.AllowUserToDeleteRows = false;
             this.DataInfoUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataInfoUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.DataInfoUsers.BackgroundColor = System.Drawing.Color.White;
             this.DataInfoUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataInfoUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
+            this.DataInfoUsers.GridColor = System.Drawing.Color.Black;
             this.DataInfoUsers.Location = new System.Drawing.Point(12, 82);
             this.DataInfoUsers.MultiSelect = false;
             this.DataInfoUsers.Name = "DataInfoUsers";
             this.DataInfoUsers.ReadOnly = true;
-            this.DataInfoUsers.Size = new System.Drawing.Size(346, 482);
+            this.DataInfoUsers.RowHeadersVisible = false;
+            this.DataInfoUsers.Size = new System.Drawing.Size(617, 482);
             this.DataInfoUsers.TabIndex = 1;
             this.DataInfoUsers.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Pass";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Description";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.DataInfoUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataInfoUsers_CellClick);
             // 
             // panel2
             // 
@@ -262,7 +253,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(828, 76);
+            this.panel2.Size = new System.Drawing.Size(1089, 76);
             this.panel2.TabIndex = 0;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -285,7 +276,7 @@
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(804, 0);
+            this.closeButton.Location = new System.Drawing.Point(1069, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(20, 19);
             this.closeButton.TabIndex = 1;
@@ -306,11 +297,59 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "My DataBase";
             // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 50.76142F;
+            this.Column5.HeaderText = "ID";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.FillWeight = 75.11215F;
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.FillWeight = 114.0199F;
+            this.Column2.HeaderText = "Pass";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.FillWeight = 171.8121F;
+            this.Column3.HeaderText = "Description";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(199)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column4.FillWeight = 88.29438F;
+            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column4.HeaderText = "";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Text = "delete";
+            this.Column4.UseColumnTextForButtonValue = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 576);
+            this.ClientSize = new System.Drawing.Size(1089, 576);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -338,9 +377,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.DataGridView DataInfoUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button LoadDataButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -354,5 +390,10 @@
         private System.Windows.Forms.PictureBox upButton;
         private System.Windows.Forms.PictureBox downButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
     }
 }

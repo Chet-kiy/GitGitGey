@@ -51,7 +51,7 @@ namespace GitHub
             adapter.Fill(table);
 
             DataInfoUsers.Rows.Clear();
-
+            int num = 1;
             foreach (DataRow dr in table.Rows)
             {
                 object crypt_name = dr.ItemArray[1];
@@ -62,8 +62,8 @@ namespace GitHub
                 string pass = db.decrypt((string) crypt_pass);
                 string description = db.decrypt((string) crypt_description);
                 
-
-                DataInfoUsers.Rows.Add(name, pass, description);               
+                DataInfoUsers.Rows.Add(num,name, pass, description);
+                num++;
             }
         }
 
@@ -166,6 +166,8 @@ namespace GitHub
                 descriptionField.Text = "description";
                 descriptionField.ForeColor = Color.Gray;
 
+                LoadDataUsersInfo(IdUser);
+
 
             }
             else
@@ -251,6 +253,33 @@ namespace GitHub
                 downButton.Enabled = true;
                 upButton.Visible = false;
                 upButton.Enabled = false;
+            }
+        }
+
+        private void DataInfoUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                int rowID = e.RowIndex;
+                DB db = new DB();
+                string name = db.encrypt((string) DataInfoUsers[1, rowID].Value);
+                string pass = db.encrypt((string)DataInfoUsers[2, rowID].Value);
+                string description = db.encrypt((string)DataInfoUsers[3, rowID].Value);
+
+                MySqlCommand command = new MySqlCommand("DELETE FROM `infousers` WHERE `infousers`.`name` = @name AND `infousers`.`password` = @pass AND `infousers`.`Description` = @desc", db.getConnection());
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
+                command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = description;
+
+                db.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Запись удалена", "message");
+                    LoadDataUsersInfo(IdUser);
+                }
+
+                db.closeConnection();
             }
         }
     }
