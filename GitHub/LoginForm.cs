@@ -160,6 +160,7 @@ namespace GitHub
                 mainform.IdUser = UserID;
                 mainform.Show();
                 this.Hide();
+                GC.Collect();
             }  
             else
                 MessageBox.Show("Неверные имя пользователя или пароль","message");

@@ -214,6 +214,7 @@ namespace GitHub
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();
+                GC.Collect();
             }
             else
                 MessageBox.Show("Не удалось создать аккаунт","message");
@@ -261,6 +262,7 @@ namespace GitHub
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
+            GC.Collect();
         }
     }
 }

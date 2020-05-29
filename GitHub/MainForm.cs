@@ -117,11 +117,11 @@ namespace GitHub
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {           
+        {
             LoginForm loginform = new LoginForm();           
             loginform.Show();
             this.Close();
-
+            GC.Collect();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -260,26 +260,30 @@ namespace GitHub
         {
             if (e.ColumnIndex == 4)
             {
-                int rowID = e.RowIndex;
-                DB db = new DB();
-                string name = db.encrypt((string) DataInfoUsers[1, rowID].Value);
-                string pass = db.encrypt((string)DataInfoUsers[2, rowID].Value);
-                string description = db.encrypt((string)DataInfoUsers[3, rowID].Value);
-
-                MySqlCommand command = new MySqlCommand("DELETE FROM `infousers` WHERE `infousers`.`name` = @name AND `infousers`.`password` = @pass AND `infousers`.`Description` = @desc", db.getConnection());
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
-                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
-                command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = description;
-
-                db.openConnection();
-
-                if (command.ExecuteNonQuery() == 1)
+                if (MessageBox.Show("Вы действительно хотите удалить запись?","message",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Запись удалена", "message");
-                    LoadDataUsersInfo(IdUser);
-                }
+                    int rowID = e.RowIndex;
+                    DB db = new DB();
+                    string name = db.encrypt((string)DataInfoUsers[1, rowID].Value);
+                    string pass = db.encrypt((string)DataInfoUsers[2, rowID].Value);
+                    string description = db.encrypt((string)DataInfoUsers[3, rowID].Value);
 
-                db.closeConnection();
+                    MySqlCommand command = new MySqlCommand("DELETE FROM `infousers` WHERE `infousers`.`name` = @name AND `infousers`.`password` = @pass AND `infousers`.`Description` = @desc", db.getConnection());
+                    command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+                    command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
+                    command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = description;
+
+                    db.openConnection();
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Запись удалена", "message");
+                        LoadDataUsersInfo(IdUser);
+                    }
+
+                    db.closeConnection();
+                }
+                
             }
         }
     }
