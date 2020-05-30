@@ -36,11 +36,12 @@ namespace GitHub
             
         }
         public string IdUser;
+        DataTable table;
         private void LoadDataUsersInfo(string IdUser)
         {
             DB db = new DB();
 
-            DataTable table = new DataTable();
+            table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
@@ -62,8 +63,9 @@ namespace GitHub
                 string pass = db.decrypt((string) crypt_pass);
                 string description = db.decrypt((string) crypt_description);
                 
-                DataInfoUsers.Rows.Add(num,name, pass, description);
+                DataInfoUsers.Rows.Add(num, name, pass, description);
                 num++;
+                
             }
         }
 
